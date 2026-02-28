@@ -26,6 +26,7 @@ The pipeline checks for:
 ```bash
 pip install -r requirements.txt
 python pipeline.py
+```
 
 ## Notes
 - Generated data and build artifacts (e.g., `__pycache__`, output files) are excluded from version control.

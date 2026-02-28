@@ -1,14 +1,14 @@
 import yaml
 import pandas as pd
 
-from data_ingestion.fetch_prices import fetch_ohlcv
-from data_ingestion.symbols import EQUITY_SYMBOLS
-from data_validation.checks import (
+from market_data_pipeline.ingestion.fetch_prices import fetch_ohlcv
+from market_data_pipeline.ingestion.symbols import EQUITY_SYMBOLS
+from market_data_pipeline.validation.checks import (
     validate_schema,
     validate_prices,
     validate_row_count
 )
-from storage.write_csv import write_csv
+from market_data_pipeline.storage.write_csv import write_csv
 
 
 def load_config(path: str = "config.yaml") -> dict:
@@ -16,8 +16,8 @@ def load_config(path: str = "config.yaml") -> dict:
         return yaml.safe_load(f)
 
 
-def run_pipeline() -> None:
-    config = load_config()
+def run_pipeline(config_path: str = "config.yaml") -> None:
+    config = load_config(path=config_path)
 
     all_data = []
 
