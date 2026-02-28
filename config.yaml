@@ -1,0 +1,11 @@
+data:
+  start_date: "2018-01-01"
+  end_date: null   # null = today
+  frequency: "1d"
+
+storage:
+  directory: "output"
+  filename: "equities_ohlcv.csv"
+
+validation:
+  min_rows: 100
